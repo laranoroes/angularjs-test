@@ -1,18 +1,21 @@
-const getRandomNumberForErrorSimulation = () => {
-    return 1;
-
-    let rand = Math.floor(Math.random() * (6 - 1)) + 1;
-    console.log(rand);
-    return rand;
+const shouldThrowError = () => {
+    return false;
+    
+    if (Math.floor(Math.random() * (6 - 1)) + 1==5) {
+        return true;
+        console.log('Throw Error!');
+    }
+    
+    return false;
 };
 module.exports = {
-    shouldThrowError: async (req, res) => {
-        if (getRandomNumberForErrorSimulation()==5) {
+    checkIfNeedsError: async (req, res) => {
+        if (shouldThrowError()) {
             return new Promise((a, r) => {
                 {
                     setTimeout(function () {
                         res.status(500)
-                        .json({ errorMessage: 'Servidor indisponível' });
+                           .json({ errorMessage: 'Servidor indisponível' });
                         r();
                     }, 2000);
                 }

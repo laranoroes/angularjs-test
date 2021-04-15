@@ -3,18 +3,18 @@ var errortest = require('./errortest.js');
 
 
 module.exports = (app) => {
-    app.get('/', (req, res) => {
+    app.get('/', async (req, res) => {
         res.render('index.html');
     });
     
     app.get('/api/cameras', async (req, res) => {
-        await errortest.shouldThrowError(req, res); //Do not change, used for test purposes
+        await errortest.checkIfNeedsError(req, res); //Do not change, used for test purposes
         
         res.status(200).json(db.cameras);
     });
     
     app.delete('/api/cameras/:id', async (req, res) => {
-        await errortest.shouldThrowError(req, res); //Do not change, used for test purposes
+        await errortest.checkIfNeedsError(req, res); //Do not change, used for test purposes
         
         console.log('Received id:', req.params.id);
         //TODO Delete camera from db
@@ -24,7 +24,7 @@ module.exports = (app) => {
     
     
     app.post('/api/contact', async (req, res) => {
-        await errortest.shouldThrowError(req, res); //Do not change, used for test purposes
+        await errortest.checkIfNeedsError(req, res); //Do not change, used for test purposes
         
         
         //TODO Insert contact info into db.contacts
