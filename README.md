@@ -21,10 +21,9 @@
 1. Receive your evaluation!
 
 ### Requirements
-* No libraries/frameworks that are not already in this project can be used
+* No libraries/frameworks that are not already in this project can be used unless said otherwise
 * The written code must be clean and readable
 * Content must be responsive
-* Follow the provided design
 * API errors must have visual treatment and explanation
 * Required fields specifications must have a clear presentation of it's requirements
 * Content must be OCD friendly (Alignments, color patterns, centralization)
