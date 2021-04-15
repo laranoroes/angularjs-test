@@ -1,9 +1,4 @@
-
-
 ## AngularJS Test
-
-######Disclaimer: This is a fork from [MEAN.js](https://meanjs.org/) made private for the purpose of evaluate candidates. 
-
 
 ### What is the purpose of this repo?
 
