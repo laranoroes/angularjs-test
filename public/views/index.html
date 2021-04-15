@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="camerite">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/index.css">
+
+    <meta charset="utf-8">
+    <base href="/">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <script src="/public/controllers/app.js"></script>
+    <script src="/public/routers/index.js"></script>
+
+
+    <title>Camerite Angular Test</title>
+</head>
+
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand camerite-header" href="/">Camerite</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/camera"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li><a href="/contact"><span class="glyphicon glyphicon-camera"></span> Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div ng-view class="jumbotron text-center"></div>
+<footer class="text-center">
+    Footer
+</footer>
+</body>
+</html>

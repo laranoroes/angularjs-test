@@ -1,15 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+require('./routes')(app);
 
-app.get('/', (req, res) => {
-    res.render('index.html');
-});
+app.use('/public', express.static('public'));
 
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/public/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+app.listen(3000);
