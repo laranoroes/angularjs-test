@@ -7,10 +7,18 @@ module.exports = (app) => {
         res.render('index.html');
     });
     
+    app.get('/contact', async (req, res) => {
+        res.render('index.html');
+    });
+    
     app.get('/api/cameras', async (req, res) => {
         await errortest.checkIfNeedsError(req, res); //Do not change, used for test purposes
-        
         res.status(200).json(db.cameras);
+    });
+    
+    //Do not change, used for test purposes
+    app.get('/api/contact', (req, res) => {
+        res.status(200).json(db.contacts);
     });
     
     app.delete('/api/cameras/:id', async (req, res) => {
@@ -30,10 +38,5 @@ module.exports = (app) => {
         //TODO Insert contact info into db.contacts
         
         res.status(200).end();
-    });
-    
-    //Do not change, used for test purposes
-    app.get('/api/contact', (req, res) => {
-        res.status(200).json(db.contacts);
     });
 };
