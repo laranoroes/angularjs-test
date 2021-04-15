@@ -36,7 +36,6 @@
 
 ### Felling like it's too easy? (Not requirements)
 * Do not allow more than 3 submissions per user per day
-* Create a stock amount property for the cameras and API usage for this
 * Create a shop cart that reserves an item from stock to that user
 * Update the stock dynamically (You can install other libs for this one)
 
