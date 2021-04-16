@@ -1,5 +1,5 @@
 const shouldThrowError = () => {
-    return false;
+    //return false;
     
     if (Math.floor(Math.random() * (6 - 1)) + 1==5) {
         return true;

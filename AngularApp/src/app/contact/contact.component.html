@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="container-title">
+    <p>Fale com a gente</p>
+    <p>Entre em contato com a Camerite para tirar suas dúvidas.</p>
+  </div>
+
+  <div class="container-form">
+    <form [formGroup]="myForm">
+      <div class="container-inputs">
+        <mat-form-field class="name" appearance="outline">
+          <mat-label>Nome*</mat-label>
+          <input matInput type="string" formControlName="name"/>
+        </mat-form-field>
+        <mat-form-field class="email" appearance="outline">
+          <mat-label>Email*</mat-label>
+          <input matInput type="string" formControlName="email"/>
+        </mat-form-field>
+
+        <mat-form-field class="phone" appearance="outline">
+          <mat-label>Telefone*</mat-label>
+          <input matInput type="string" formControlName="phone"/>
+        </mat-form-field>
+        <mat-form-field class="province" appearance="outline">
+          <mat-label>Estado*</mat-label>
+          <input matInput type="string" formControlName="province"/>
+        </mat-form-field>
+        <mat-form-field class="city" appearance="outline">
+          <mat-label>Cidade*</mat-label>
+          <input matInput type="string" formControlName="city"/>
+        </mat-form-field>
+
+        <mat-form-field class="message" appearance="outline">
+          <mat-label>Mensagem</mat-label>
+          <textarea matInput type="string" formControlName="message"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="container-button">
+        <button type="reset" [disabled]="myForm.invalid" (click)="onSubmit()">Enviar</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+  <footer>
+    <h3>Camerite | 2021 | Desenvolvido por Lara Albuquerque</h3>
+</footer>

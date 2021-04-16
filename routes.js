@@ -3,6 +3,23 @@ var errortest = require('./errortest.js');
 
 
 module.exports = (app) => {
+
+    //Middleware function to handle "No 'Access-Control-Allow-Origin' header"
+    //Reference: https://stackoverflow.com/questions/18310394/no-access-control-allow-origin-node-apache-port-issue
+    app.use(function (req, res, next) {
+        // Website you wish to allow to connect
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');       
+        // Request methods you wish to allow
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');      
+        // Request headers you wish to allow
+        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');      
+        // Set to true if you need the website to include cookies in the requests sent
+        // to the API (e.g. in case you use sessions)
+        res.setHeader('Access-Control-Allow-Credentials', true);      
+        // Pass to next layer of middleware
+        next();
+    });
+
     app.get('/', async (req, res) => {
         res.render('index.html');
     });
@@ -14,6 +31,7 @@ module.exports = (app) => {
     app.get('/api/cameras', async (req, res) => {
         await errortest.checkIfNeedsError(req, res); //Do not change, used for test purposes
         res.status(200).json(db.cameras);
+        
     });
     
     //Do not change, used for test purposes
@@ -33,9 +51,10 @@ module.exports = (app) => {
     
     app.post('/api/contact', async (req, res) => {
         await errortest.checkIfNeedsError(req, res); //Do not change, used for test purposes
-        
-        
-        //TODO Insert contact info into db.contacts
+        console.log(req.body)
+        var contato;
+        contato = req.body;       
+        db.contacts.push(contato);
         
         res.status(200).end();
     });

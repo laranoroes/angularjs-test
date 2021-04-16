@@ -1,0 +1,24 @@
+:host {
+  color:#212529;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 40px;
+}
+
+.nav {
+  flex: 1 1 auto;
+}
+
+.icon-text-camera, .icon-text-contact {
+  color: #212529;
+  font-size: 0.7em;
+  margin-right: 10px;
+}
+
+a { 
+  text-decoration: none;
+}
+

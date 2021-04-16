@@ -1,0 +1,32 @@
+<div class="container">
+  
+  <div class="container-title">
+    <p>Câmeras</p>
+    <p>Encontre o modelo certo para as suas necessidades.</p>
+  </div>
+
+  <div class="container-list">
+  
+    <div class="itens">
+      <div class="container-camera" *ngFor="let camera of cameras">
+        <div class="img">
+          <img src={{camera.image}} onError="this.src='https://pricepcentr34.ru/assets/images/products/no_photo.jpg'"/>
+        </div>
+        <mat-list>
+          <mat-list-item >
+              <h4 matLine><strong>{{camera.brand}}</strong></h4>          
+              <p matLine class="demo-2"><strong>Modelo:</strong> {{camera.model}}</p>
+              <p matLine class="demo-2"><strong>Preço:</strong> R$ {{camera.price}}</p>
+              <p matLine class="demo-2"><strong>Estoque:</strong> {{camera.stock}}</p>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+    <h3>Camerite | 2021 | Desenvolvido por Lara Albuquerque</h3>
+</footer>
